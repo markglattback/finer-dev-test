@@ -20,6 +20,15 @@ export default {
 };
 ```
 
+Create a .env file in the application's root directory
+
+```bash
+MYSQL_HOST=your_hostname
+MYSQL_USER=your_user
+MYSQL_PWD=your_password
+MYSQL_DB=your_database
+```
+
 Install dependencies
 
 ```bash
