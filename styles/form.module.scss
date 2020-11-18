@@ -1,0 +1,71 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 0.75rem;
+  width: 695px;
+  margin: 0 auto;
+  align-self: center;
+  justify-self: center;
+}
+
+.formInputGroup {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  input,
+  select,
+  textarea {
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0.6rem;
+    width: 218px;
+    height: 40px;
+    font-size: 16px;
+    padding: 0.75rem;
+    box-shadow: inset 2px 2px 9px rgba(0, 0, 0, 0.48);
+  }
+
+  select {
+    background: linear-gradient(white, rgba(85, 85, 85, 0.48));
+  }
+
+  textarea {
+    width: 390px;
+    height: 146px;
+  }
+}
+
+.formInputGroupInvalid {
+  input,
+  select {
+    background: #f8c0c0;
+    border: 1px solid #f00;
+  }
+}
+
+.inputInvalid {
+  background: #f8c0c0;
+  border: 1px solid #f00;
+}
+
+.inlineInputGroup {
+  display: flex;
+
+  .dateInput {
+    width: 49px;
+    margin-right: 0.5rem;
+  }
+
+  .dateInputWide {
+    width: 70px;
+    margin-right: 0;
+  }
+}

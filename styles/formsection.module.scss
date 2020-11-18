@@ -1,0 +1,58 @@
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.sectionContent {
+  border-radius: 0.6rem;
+  background: #dedede;
+  margin: 0.25rem;
+  color: black;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  background: linear-gradient(#ffc600, #eea20e);
+  box-shadow: inset 1px 1px rgba(255, 255, 255, 0.48);
+  border-radius: 0.6rem;
+  padding: 1rem;
+  color: white;
+  text-shadow: 1px 1px #686868;
+}
+
+.sectionInputsWrapper {
+  overflow: hidden;
+  height: auto;
+  max-height: 300px; /* required for animation */
+  transition: all 0.3s ease-in-out;
+  padding: 0.75rem;
+}
+
+.sectionInputsWrapperHidden {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.sectionInputs {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  grid-gap: 0.75rem;
+}
+
+.sectionButton {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    background: linear-gradient(#3e4ab8, #7563d3);
+    color: white;
+    text-shadow: 1px 1px #686868;
+
+    width: 128px;
+    height: 32px;
+    border-radius: 0.6rem;
+    border: none;
+  }
+}
