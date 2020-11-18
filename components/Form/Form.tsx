@@ -54,9 +54,9 @@ const validationSchema = Yup.object({
   email: Yup.string().email('Please enter a valid email address').required('Please provide your email address'),
   mobile: Yup.string().matches(/^07\d{9}|\+*447\d{9}$/, 'Please enter a valid UK mobile number').required('Please provide your mobile number'), // match UK mobile numbers
   gender: Yup.string().oneOf([Gender.MALE, Gender.FEMALE, Gender.NON_BINARY, Gender.PREFER_NOT_TO_SAY]).required('Please select an option'), // match only the valid genders
-  dobDay: Yup.string().matches(/^([0]?[1-9]|[1|2][0-9]|[3][0|1])$/).required(),
-  dobMonth: Yup.string().matches(/^([0]?[1-9]|[1][0-2])$/).required(),
-  dobYear: Yup.string().matches(/^([0-9]{4})$/).required(),
+  dobDay: Yup.string().max(2).matches(/^([0]?[1-9]|[1|2][0-9]|[3][0|1])$/, 'Please enter a valid date in dd/mm/yyyy format').required('Please provide your date of birth'),
+  dobMonth: Yup.string().max(2).matches(/^([0]?[1-9]|[1][0-2])$/, 'Please enter a valid date in dd/mm/yyyy format').required('Please provide your date of birth'),
+  dobYear: Yup.string().max(4).matches(/^([0-9]{4})$/, 'Please enter a valid date in dd/mm/yyyy format').required('Please provide your date of birth'),
   comments: Yup.string(),
 })
 
@@ -166,15 +166,15 @@ export default function Form() {
                   <Field id="dobDay" name="dobDay" className={styles.dateInput} onChange={(e: ChangeEvent<HTMLInputElement>) => {
                     formik.handleChange(e);
                     formik.setFieldValue('dob', `${e.target.value}/${formik.values.dobMonth}/${formik.values.dobYear}`);
-                  }} style={(formik.touched.dobDay && formik.errors.dobDay) && inlineErrorStyle} />
+                  }} style={(formik.touched.dobDay && formik.errors.dobDay) && inlineErrorStyle} maxLength={2} />
                   <Field id="dobMonth" name="dobMonth" className={styles.dateInput} onChange={(e: ChangeEvent<HTMLInputElement>) => {
                     formik.handleChange(e);
                     formik.setFieldValue('dob', `${formik.values.dobDay}/${e.target.value}/${formik.values.dobYear}`);
-                  }} style={(formik.touched.dobMonth && formik.errors.dobMonth) && inlineErrorStyle} />
+                  }} style={(formik.touched.dobMonth && formik.errors.dobMonth) && inlineErrorStyle} maxLength={2} />
                   <Field id="dobYear" name="dobYear" className={styles.dateInputWide} onChange={(e: ChangeEvent<HTMLInputElement>) => {
                     formik.handleChange(e);                    
                     formik.setFieldValue('dob', `${formik.values.dobDay}/${formik.values.dobMonth}/${e.target.value}`);
-                  }} style={(formik.touched.dobYear && formik.errors.dobYear) && inlineErrorStyle} />
+                  }} style={(formik.touched.dobYear && formik.errors.dobYear) && inlineErrorStyle} maxLength={4} />
                 </div>
               </div>       
            </FormSection>
