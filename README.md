@@ -2,12 +2,16 @@
 
 This is a customised version of the dev test, using a [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction) in place of the Laravel framework.
 
+## Prerequisite
+
+This project's API routes require a working MySQl service and does not include local setup files. Please provide the MySQL connection configuration in the config file descrived below.
+
 ## Quick Start
 
-Create a knex config file in the application's root directory
+Create a knex config file in the application's root directory.
 
 ```typescript
-// ./config/knex.ts
+// config/knex.ts
 
 export default {
   client: "mysql",
@@ -20,7 +24,7 @@ export default {
 };
 ```
 
-Create a .env file in the application's root directory
+Create a .env file in the application's root directory.
 
 ```bash
 MYSQL_HOST=your_hostname
