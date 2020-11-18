@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Form from '../components/Form/Form';
 import styles from '../styles/index.module.scss';
 
