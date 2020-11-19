@@ -10,6 +10,19 @@ export enum Gender {
   PREFER_NOT_TO_SAY = 'Prefer not to say'
 }
 
+export enum FormFieldNames {
+  firstName = 'firstName',
+  lastName = 'lastName',
+  email = 'email',
+  mobile = 'mobile',
+  gender = 'gender',
+  dob = 'dob',
+  dobDay = 'dobDay',
+  dobMonth = 'dobMonth',
+  dobYear = 'dobYear',
+  comments = 'comments',
+}
+
 export interface FormFields {
   firstName: string;
   lastName: string;
